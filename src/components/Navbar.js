@@ -1,38 +1,29 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
-import github from '../img/github-icon.svg'
-import logo from '../img/logo.svg'
+import Logotype from './Logotype'
+
+import './Navbar.module.sass'
 
 const Navbar = () => (
   <nav className="navbar is-transparent">
     <div className="container">
-      <div className="navbar-brand">
-        <Link to="/" className="navbar-item">
-          <figure className="image">
-            <img src={logo} alt="Kaldi" style={{ width: '88px' }} />
-          </figure>
-        </Link>
-      </div>
-      <div className="navbar-start">
-        <Link className="navbar-item" to="/about">
-          About
-        </Link>
-        <Link className="navbar-item" to="/products">
-          Products
-        </Link>
-      </div>
+      <Link to="/" className="navbar-logotype">
+        <Logotype type="light" />
+      </Link>
       <div className="navbar-end">
-        <a
-          className="navbar-item"
-          href="https://github.com/AustinGreen/gatsby-netlify-cms-boilerplate"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span className="icon">
-            <img src={github} alt="Github" />
-          </span>
-        </a>
+        <Link className="navbar-item" to="/services">
+          Våra tjänster
+        </Link>
+        <Link className="navbar-item" to="/founder">
+          Grundare
+        </Link>
+        <Link className="navbar-item" to="/cv">
+          CV
+        </Link>
+        <Link className="navbar-item" to="/contact">
+          Kontakt
+        </Link>
       </div>
     </div>
   </nav>

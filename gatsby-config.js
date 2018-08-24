@@ -1,10 +1,33 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby + Netlify CMS Starter',
+    title: 'Skadebyrån | Specialist på reglering av stora och komplexa skador',
+    siteName: 'Skadebyrån',
+    siteUrl: 'https://www.skadebyran.se',
+    siteLogo: 'https://www.skadebyran.se/assets/identity/logotype.png',
+    locale: 'sv_SE',
+    contactInfo: {
+      text: 'För kontakt med bolaget, vänd dig till VD Lars-Eric Langvardt.',
+      email: 'lars-eric@skadebyran.se',
+      phone: '+46 72-050 39 99'
+    },
+    email: 'lars-eric@skadebyran.se',
+    adress: {
+      streetAdress: 'Kiselvägen 41',
+      postalCode: '746 41',
+      adressLocality: 'Stockholm',
+      adressCountry: 'SE'
+    },
   },
   plugins: [
-    'gatsby-plugin-react-helmet',
-    'gatsby-plugin-sass',
+    {
+      resolve: 'gatsby-plugin-react-helmet',
+    },
+    {
+      resolve: 'gatsby-plugin-sass',
+      options: {
+        precision: 8,
+      },
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -19,8 +42,12 @@ module.exports = {
         name: 'images',
       },
     },
-    'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp',
+    {
+      resolve: 'gatsby-plugin-sharp',
+    },
+    {
+      resolve: 'gatsby-transformer-sharp',
+    },
     {
       resolve: 'gatsby-transformer-remark',
       options: {
@@ -33,6 +60,8 @@ module.exports = {
         modulePath: `${__dirname}/src/cms/cms.js`,
       },
     },
-    'gatsby-plugin-netlify', // make sure to keep it last in the array
+    {
+      resolve: 'gatsby-plugin-netlify', // make sure to keep it last in the array
+    },
   ],
 }
